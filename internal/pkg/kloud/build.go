@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+
+	"github.com/kloud-team/kloud/build_model"
 )
 
 var (
@@ -13,12 +15,10 @@ var (
 	API_BUILD_STATIC_CONTENT_TYPE = "application/javascript"
 )
 
-type BuildArg struct {
-	Dockerfile string
-}
+
 
 type Build struct {
-	BuildArg
+	build_model.BuildArg
 	WorkDirectoryPath string
 	gzipPathFile      string
 }
